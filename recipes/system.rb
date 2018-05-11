@@ -18,7 +18,7 @@
 
 bash 'update system rubygems' do
   environment 'REALLY_GEM_UPDATE_SYSTEM' => 'true'
-  code "#{node['rubygems-update']['system']['gem']['bin']} update --system"
+  code "#{node['rubygems-update']['system']['gem']['bin']} update --system #{node['rubygems-update']['system']['version']}"
   not_if do
     node['rubgems-update']['system']['skip']
   end
